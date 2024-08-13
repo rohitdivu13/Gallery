@@ -1,0 +1,149 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*explain*/
+  background-color: rgb(0, 0, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: aliceblue;
+}
+:root{  /*explain*/
+  --font-color: #808088;
+  --primary-color:rgb(1, 1, 36);
+}
+
+li{
+  list-style: none;  /*explain*/
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center; /*explain*/
+  /* height: 100vh; *//*change*/
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+
+  h1{
+    font-size: 300%;
+    text-align: center;
+  }
+  .logo{
+    border: 5px solid red;  
+    width:10%;
+    caret-color: transparent; 
+    box-shadow: 4px 5px 6px rgba(128, 128, 128, 0.486) inset;
+    border: 1px solid rgba(0, 0, 255, 0.235); 
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-image: url("images/logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+  .logo:active{ 
+    scale: .9; 
+  }
+
+  
+
+  .gallery{
+    width: 80%;
+    height: 100vh; 
+    box-shadow: -4px 4px 3px gray;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+    overflow-x:scroll;
+    border-radius: 14px;
+    background-color: white;
+
+    .gallery-child{
+      box-shadow: inset 2px 4px 40px rgba(0, 0, 0, 0.637);
+      border-radius: 6px;
+      padding: 2%;
+      overflow-x: scroll;
+      display: flex;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+      background-color: azure;
+      width: 100%;
+      height: 100%;
+
+
+      div{
+        width:20%;
+        box-shadow: 3px 3px 2px;
+        aspect-ratio: 1;
+        /* border: 1px solid red; */
+
+        img{
+          width: 100%;
+          filter: drop-shadow(2px 4px 5px white);
+          height: 100%;
+        }
+      }
+    }
+
+    .gallery-child::-webkit-scrollbar{
+      display: none;
+    } 
+  }
+  .gallery{
+    display: none;
+  }
+
+  .gallery::-webkit-scrollbar{
+    display: none;
+  } 
+  section{
+    /* border: 1px solid red; */
+    background-color: white;
+    width: 10%;
+    height: 100%;
+    position: sticky;
+    left: -3%;
+    padding: 2%;
+    z-index: 1;
+    ul{
+      li{
+        background-color: white;
+        line-height: 5;
+        a{
+      background-color: white;
+      color: black;
+          
+        }
+      }
+    }
+  }
+
+}
+
+.container .active{
+  display: flex;
+  position: relative;
+  animation: scale 0.5s linear;
+}
+
+@keyframes scale {
+
+  from {
+    scale: 0;
+  }
+  to{
+    scale: 1;
+  }
+  
+}
